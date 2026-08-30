@@ -138,7 +138,7 @@ export default function App() {
   const [expandedFaq, setExpandedFaq] = useState<string | null>(null);
   const [timeLeft, setTimeLeft] = useState<number>(1800); // 30 minutes in seconds
   const [isVideoPlayRequested, setIsVideoPlayRequested] = useState<boolean>(false);
-  const [checkoutUrl, setCheckoutUrl] = useState<string>("https://pay.hotmart.com/O107205497J?checkoutMode=10");
+  const [checkoutUrl, setCheckoutUrl] = useState<string>("https://pay.hotmart.com/E107379450E?checkoutMode=10");
 
   useEffect(() => {
     // Capture tracking and UTM parameters from URL and persist them
@@ -176,7 +176,7 @@ export default function App() {
     });
     
     // 3. Construct the final Hotmart checkout link with all parameters appended
-    const baseUrl = "https://pay.hotmart.com/O107205497J";
+    const baseUrl = "https://pay.hotmart.com/E107379450E";
     const baseParams = new URLSearchParams("checkoutMode=10");
     
     Object.entries(trackingParams).forEach(([key, val]) => {
