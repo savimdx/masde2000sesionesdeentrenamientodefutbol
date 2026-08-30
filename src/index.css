@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+html {
+  font-size: 17px;
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #ffffff;
+  color: #1e293b;
+}
+
+/* Fix mobile tap highlights */
+*, ::before, ::after {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@theme {
+  --font-sans: "Poppins", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "Poppins", ui-monospace, SFMono-Regular, monospace;
+  --animate-marquee: marquee 30s linear infinite;
+  
+  @keyframes marquee {
+    0% { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(-50%, 0, 0); }
+  }
+}
+
+/* Marquee hardware acceleration */
+.animate-marquee {
+  will-change: transform;
+}
+
+

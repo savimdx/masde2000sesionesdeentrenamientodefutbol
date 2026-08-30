@@ -1,0 +1,8 @@
+{
+  "name": "Remix Remix Página de Vendas Fútbol Sala",
+  "description": "+2000 Sesiones de Entrenamientos de Fútbol",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
