@@ -174,6 +174,16 @@ export const BONUSES: BonusItem[] = [
     tag: "EJERCICIOS ADICIONALES",
     image: "https://i.ibb.co/JWmhMQJk/Ejercicios-Adicionales-de-F-tbol-Sala.png",
     fallbackImage: "https://i.ibb.co/JWmhMQJk/Ejercicios-Adicionales-de-F-tbol-Sala.png"
+  },
+  {
+    id: "bon-19",
+    number: 9,
+    title: "80 Ejercicios Físicos para el Portero de Fútbol",
+    description: "Planificación metodológica especializada en el entrenamiento de arqueros: potencia explosiva, velocidad de reacción, agilidad bajo palos, caídas y reflejos coordinativos.",
+    originalPrice: 29,
+    tag: "ENTRENAMIENTO DE PORTEROS",
+    image: "https://i.ibb.co/qF7XwgXv/Chat-GPT-Image-29-de-ago-de-2026-22-24-02.png",
+    fallbackImage: "https://i.ibb.co/qF7XwgXv/Chat-GPT-Image-29-de-ago-de-2026-22-24-02.png"
   }
 ];
 
@@ -233,8 +243,8 @@ export const FAQS: FAQItem[] = [
   },
   {
     id: "faq-5",
-    question: "¿Los 10 bonos especiales están realmente incluidos?",
-    answer: "Sí, todos los 10 bonos mencionados están incluidos 100% gratis dentro del precio promocional de hoy. Se añadirán automáticamente a tu área de descarga al realizar el pedido."
+    question: "¿Los 9 bonos especiales están realmente incluidos?",
+    answer: "Sí, todos los 9 bonos mencionados están incluidos 100% gratis dentro del precio promocional de hoy. Se añadirán automáticamente a tu área de descarga al realizar el pedido."
   }
 ];
 

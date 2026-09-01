@@ -68,7 +68,7 @@ export default function PurchaseModal({ isOpen, onClose }: PurchaseModalProps) {
                 <span className="text-xs text-slate-400 line-through">{convertAndFormat(391)}</span>
               </div>
               <div className="flex justify-between items-center text-emerald-600">
-                <span className="text-xs font-semibold">Bono #1 al #8 (Manuales y Lecciones en Video)</span>
+                <span className="text-xs font-semibold">Bono #1 al #9 (Manuales y Lecciones en Video)</span>
                 <span className="text-xs font-bold uppercase">GRATIS</span>
               </div>
               <div className="h-[1px] bg-slate-200 my-2" />

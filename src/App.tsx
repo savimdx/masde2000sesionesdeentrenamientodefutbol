@@ -363,10 +363,10 @@ export default function App() {
               <Flame className="w-3.5 h-3.5 fill-current" /> SÚPER REGALOS DE ACCESO INMEDIATO
             </div>
             <h2 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight">
-              Recibe hoy estos 8 Bonos Exclusivos (100% Gratis)
+              Recibe hoy estos 9 Bonos Exclusivos (100% Gratis)
             </h2>
             <p className="text-sm text-slate-600 leading-relaxed max-w-2xl mx-auto">
-              Solo tienes que comprar la biblioteca de entrenamientos hoy mismo para recibir de regalo ocho manuales metodológicos y recursos adicionales de gran valor.
+              Solo tienes que comprar la biblioteca de entrenamientos hoy mismo para recibir de regalo nueve manuales metodológicos y recursos adicionales de gran valor.
             </p>
           </div>
 
@@ -393,17 +393,33 @@ export default function App() {
                       />
                     </div>
                   ) : (
-                    <div className="bg-slate-50/60 border border-slate-100 rounded-2xl p-4 flex flex-col items-center justify-center mb-5 h-[240px] text-center relative overflow-hidden">
-                      <div className="absolute inset-0 bg-gradient-to-tr from-emerald-500/5 to-transparent pointer-events-none" />
-                      <div className="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center shadow-inner mb-3">
-                        <BookOpen className="w-7 h-7" />
+                    <div className="bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-950 border border-slate-700/50 rounded-2xl p-6 flex flex-col items-center justify-between mb-5 h-[320px] sm:h-[360px] text-center relative overflow-hidden shadow-lg group-hover:shadow-emerald-950/20 transition-all">
+                      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-emerald-500/20 via-transparent to-transparent pointer-events-none" />
+                      <div className="w-full flex justify-between items-center relative z-10">
+                        <span className="text-[9px] font-mono tracking-widest text-amber-400 font-extrabold uppercase bg-amber-400/10 border border-amber-400/30 px-2.5 py-1 rounded-full">
+                          BONO #{bonus.number}
+                        </span>
+                        <span className="text-[9px] font-bold tracking-wider text-emerald-400 uppercase">
+                          DIGITAL PDF
+                        </span>
                       </div>
-                      <span className="text-[9px] font-mono tracking-widest text-emerald-600 font-bold uppercase mb-1">
-                        MANUAL METODOLÓGICO #{bonus.number}
-                      </span>
-                      <span className="text-xs text-slate-500 max-w-[180px] leading-snug">
-                        Guía interactiva digital lista para usar
-                      </span>
+                      
+                      <div className="relative z-10 flex flex-col items-center justify-center my-auto px-2">
+                        <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-emerald-600 to-teal-400 text-slate-950 flex items-center justify-center shadow-lg shadow-emerald-500/25 mb-4 group-hover:scale-110 transition-transform">
+                          <BookOpen className="w-7 h-7 stroke-[2.5]" />
+                        </div>
+                        <h4 className="text-sm sm:text-base font-black text-white leading-snug max-w-[220px]">
+                          {bonus.title}
+                        </h4>
+                        <span className="text-[11px] text-emerald-300 font-semibold mt-1.5">
+                          {bonus.tag}
+                        </span>
+                      </div>
+
+                      <div className="w-full relative z-10 pt-2 border-t border-slate-700/50 flex items-center justify-center gap-1.5 text-[10px] text-slate-300 font-medium">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                        Acceso Inmediato Descargable
+                      </div>
                     </div>
                   )}
 
@@ -694,7 +710,7 @@ export default function App() {
                 Planes de Entrenamientos Completos
               </h3>
               <p className="text-xs sm:text-sm text-orange-500 font-semibold italic">
-                Producto principal + 8 bonificaciones tácticas exclusivas
+                Producto principal + 9 bonificaciones tácticas exclusivas
               </p>
             </div>
 
