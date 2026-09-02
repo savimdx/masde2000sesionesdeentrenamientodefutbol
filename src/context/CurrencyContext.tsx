@@ -134,16 +134,16 @@ export const CurrencyProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   const [isConverting, setIsConverting] = useState<boolean>(false);
   const [detectedCountry, setDetectedCountry] = useState<string>('MX');
 
-  // Formatter helper for MXN currency with MX$ prefix: e.g. "MX$ 193,72"
+  // Formatter helper for MXN currency with MX$ prefix: e.g. "MX$193.72"
   const formatValue = (val: number): string => {
     try {
-      const numFormatted = val.toLocaleString('es-ES', {
+      const numFormatted = val.toLocaleString('en-US', {
         minimumFractionDigits: val % 1 === 0 ? 0 : 2,
         maximumFractionDigits: 2,
       });
-      return `MX$ ${numFormatted}`;
+      return `MX$${numFormatted}`;
     } catch (e) {
-      return `MX$ ${val}`;
+      return `MX$${val}`;
     }
   };
 
@@ -165,7 +165,7 @@ export const CurrencyProvider: React.FC<{ children: React.ReactNode }> = ({ chil
 
   const convertedPrice = 193.72;
   const currencySymbol = 'MX$';
-  const formattedPrice = 'MX$ 193,72';
+  const formattedPrice = 'MX$193.72';
 
   return (
     <CurrencyContext.Provider
