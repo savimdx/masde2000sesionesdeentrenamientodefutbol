@@ -771,8 +771,8 @@ export default function App() {
                   90% DTO.
                 </span>
               </div>
-              <div className="flex items-baseline justify-center py-4 px-2 overflow-x-visible">
-                <span className="text-8xl sm:text-9xl md:text-[10.5rem] lg:text-[12.5rem] xl:text-[14.5rem] font-black text-orange-500 font-mono tracking-tighter drop-shadow-lg transition-all duration-300 whitespace-nowrap leading-none select-none">
+              <div className="flex items-baseline justify-center py-2 sm:py-4 px-1 max-w-full">
+                <span className="text-[2.25rem] min-[360px]:text-[2.65rem] min-[400px]:text-[3rem] sm:text-6xl md:text-7xl lg:text-8xl font-black text-orange-500 font-sans tracking-tight drop-shadow-md transition-all duration-300 whitespace-nowrap leading-none select-none">
                   {formattedPrice}
                 </span>
               </div>

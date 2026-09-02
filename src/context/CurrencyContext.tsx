@@ -127,35 +127,35 @@ export interface CurrencyContextProps {
 const CurrencyContext = createContext<CurrencyContextProps | undefined>(undefined);
 
 export const CurrencyProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const originalPrice = 9.36;
-  const [currencyCode, setCurrencyCode] = useState<string>('EUR');
+  const originalPrice = 193.72;
+  const [currencyCode, setCurrencyCode] = useState<string>('MXN');
   const [rate, setRate] = useState<number>(1);
   const [ratesCache, setRatesCache] = useState<Record<string, number>>(fallbackRates);
   const [isConverting, setIsConverting] = useState<boolean>(false);
-  const [detectedCountry, setDetectedCountry] = useState<string>('ES');
+  const [detectedCountry, setDetectedCountry] = useState<string>('MX');
 
-  // Formatter helper for EUR currency with € symbol at suffix: e.g. "9,36 €"
+  // Formatter helper for MXN currency with MX$ prefix: e.g. "MX$ 193,72"
   const formatValue = (val: number): string => {
     try {
       const numFormatted = val.toLocaleString('es-ES', {
         minimumFractionDigits: val % 1 === 0 ? 0 : 2,
         maximumFractionDigits: 2,
       });
-      return `${numFormatted} €`;
+      return `MX$ ${numFormatted}`;
     } catch (e) {
-      return `${val} €`;
+      return `MX$ ${val}`;
     }
   };
 
   useEffect(() => {
-    setCurrencyCode('EUR');
+    setCurrencyCode('MXN');
     setRate(1);
     setIsConverting(false);
   }, []);
 
   const setCurrency = (newCode: string) => {
-    // Keep fixed to EUR
-    setCurrencyCode('EUR');
+    // Keep fixed to MXN
+    setCurrencyCode('MXN');
     setRate(1);
   };
 
@@ -163,9 +163,9 @@ export const CurrencyProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     return formatValue(val);
   };
 
-  const convertedPrice = 9.36;
-  const currencySymbol = '€';
-  const formattedPrice = '9,36 €';
+  const convertedPrice = 193.72;
+  const currencySymbol = 'MX$';
+  const formattedPrice = 'MX$ 193,72';
 
   return (
     <CurrencyContext.Provider
