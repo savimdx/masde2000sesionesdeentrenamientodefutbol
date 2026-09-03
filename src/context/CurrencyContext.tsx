@@ -134,10 +134,10 @@ export const CurrencyProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   const [isConverting, setIsConverting] = useState<boolean>(false);
   const [detectedCountry, setDetectedCountry] = useState<string>('US');
 
-  // Formatter helper for USD currency with US$ prefix: e.g. "US$9,90"
+  // Formatter helper for USD currency with US$ prefix: e.g. "US$9.90"
   const formatValue = (val: number): string => {
     try {
-      const numFormatted = val.toLocaleString('es-ES', {
+      const numFormatted = val.toLocaleString('en-US', {
         minimumFractionDigits: val % 1 === 0 ? 0 : 2,
         maximumFractionDigits: 2,
       });
@@ -165,7 +165,7 @@ export const CurrencyProvider: React.FC<{ children: React.ReactNode }> = ({ chil
 
   const convertedPrice = 9.90;
   const currencySymbol = 'US$';
-  const formattedPrice = 'US$9,90';
+  const formattedPrice = 'US$9.90';
 
   return (
     <CurrencyContext.Provider
