@@ -127,35 +127,35 @@ export interface CurrencyContextProps {
 const CurrencyContext = createContext<CurrencyContextProps | undefined>(undefined);
 
 export const CurrencyProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const originalPrice = 193.72;
-  const [currencyCode, setCurrencyCode] = useState<string>('MXN');
+  const originalPrice = 9.36;
+  const [currencyCode, setCurrencyCode] = useState<string>('EUR');
   const [rate, setRate] = useState<number>(1);
   const [ratesCache, setRatesCache] = useState<Record<string, number>>(fallbackRates);
   const [isConverting, setIsConverting] = useState<boolean>(false);
-  const [detectedCountry, setDetectedCountry] = useState<string>('MX');
+  const [detectedCountry, setDetectedCountry] = useState<string>('ES');
 
-  // Formatter helper for MXN currency with MX$ prefix: e.g. "MX$193.72"
+  // Formatter helper for EUR currency with € symbol at suffix: e.g. "9,36 €"
   const formatValue = (val: number): string => {
     try {
-      const numFormatted = val.toLocaleString('en-US', {
+      const numFormatted = val.toLocaleString('es-ES', {
         minimumFractionDigits: val % 1 === 0 ? 0 : 2,
         maximumFractionDigits: 2,
       });
-      return `MX$${numFormatted}`;
+      return `${numFormatted} €`;
     } catch (e) {
-      return `MX$${val}`;
+      return `${val} €`;
     }
   };
 
   useEffect(() => {
-    setCurrencyCode('MXN');
+    setCurrencyCode('EUR');
     setRate(1);
     setIsConverting(false);
   }, []);
 
   const setCurrency = (newCode: string) => {
-    // Keep fixed to MXN
-    setCurrencyCode('MXN');
+    // Keep fixed to EUR
+    setCurrencyCode('EUR');
     setRate(1);
   };
 
@@ -163,9 +163,9 @@ export const CurrencyProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     return formatValue(val);
   };
 
-  const convertedPrice = 193.72;
-  const currencySymbol = 'MX$';
-  const formattedPrice = 'MX$193.72';
+  const convertedPrice = 9.36;
+  const currencySymbol = '€';
+  const formattedPrice = '9,36 €';
 
   return (
     <CurrencyContext.Provider
