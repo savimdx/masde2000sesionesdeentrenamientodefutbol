@@ -10,7 +10,7 @@ export interface CurrencyOption {
 }
 
 export const CURRENCY_LIST: Record<string, CurrencyOption> = {
-  USD: { code: 'USD', name: 'Dólar estadounidense', symbol: 'U$', flag: '🇺🇸', decimals: 2, prefix: true },
+  USD: { code: 'USD', name: 'Dólar estadounidense', symbol: 'US$', flag: '🇺🇸', decimals: 2, prefix: true },
   BRL: { code: 'BRL', name: 'Real brasileño', symbol: 'R$', flag: '🇧🇷', decimals: 2, prefix: true },
   EUR: { code: 'EUR', name: 'Euro', symbol: '€', flag: '🇪🇸', decimals: 2, prefix: false },
   MXN: { code: 'MXN', name: 'Peso mexicano', symbol: 'MX$', flag: '🇲🇽', decimals: 2, prefix: true },
@@ -127,35 +127,35 @@ export interface CurrencyContextProps {
 const CurrencyContext = createContext<CurrencyContextProps | undefined>(undefined);
 
 export const CurrencyProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const originalPrice = 9.36;
-  const [currencyCode, setCurrencyCode] = useState<string>('EUR');
+  const originalPrice = 9.90;
+  const [currencyCode, setCurrencyCode] = useState<string>('USD');
   const [rate, setRate] = useState<number>(1);
   const [ratesCache, setRatesCache] = useState<Record<string, number>>(fallbackRates);
   const [isConverting, setIsConverting] = useState<boolean>(false);
-  const [detectedCountry, setDetectedCountry] = useState<string>('ES');
+  const [detectedCountry, setDetectedCountry] = useState<string>('US');
 
-  // Formatter helper for EUR currency with € symbol at suffix: e.g. "9,36 €"
+  // Formatter helper for USD currency with US$ prefix: e.g. "US$9,90"
   const formatValue = (val: number): string => {
     try {
       const numFormatted = val.toLocaleString('es-ES', {
         minimumFractionDigits: val % 1 === 0 ? 0 : 2,
         maximumFractionDigits: 2,
       });
-      return `${numFormatted} €`;
+      return `US$${numFormatted}`;
     } catch (e) {
-      return `${val} €`;
+      return `US$${val}`;
     }
   };
 
   useEffect(() => {
-    setCurrencyCode('EUR');
+    setCurrencyCode('USD');
     setRate(1);
     setIsConverting(false);
   }, []);
 
   const setCurrency = (newCode: string) => {
-    // Keep fixed to EUR
-    setCurrencyCode('EUR');
+    // Keep fixed to USD
+    setCurrencyCode('USD');
     setRate(1);
   };
 
@@ -163,9 +163,9 @@ export const CurrencyProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     return formatValue(val);
   };
 
-  const convertedPrice = 9.36;
-  const currencySymbol = '€';
-  const formattedPrice = '9,36 €';
+  const convertedPrice = 9.90;
+  const currencySymbol = 'US$';
+  const formattedPrice = 'US$9,90';
 
   return (
     <CurrencyContext.Provider
