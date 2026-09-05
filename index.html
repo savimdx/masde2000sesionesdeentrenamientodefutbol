@@ -122,17 +122,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
 
     <!-- Preload critical Hero and Offer images for instant zero-delay first paint -->
-    <link rel="preload" as="image" href="/images/hero_futsal.webp" type="image/webp" fetchpriority="high" />
-    <link rel="preload" as="image" href="/images/pack_metodologico.webp" type="image/webp" fetchpriority="high" />
+    <link rel="preload" as="image" href="/images/hero_pack.webp" type="image/webp" fetchpriority="high" />
+    <link rel="preload" as="image" href="/images/sample_1.webp" type="image/webp" />
     <link rel="preload" as="image" href="/images/bono_1.webp" type="image/webp" />
-    <link rel="preload" as="image" href="/images/bono_2.webp" type="image/webp" />
 
     <!-- Fast parallel image preloader to eliminate load delays across all sections -->
     <script>
       (function() {
         var catalogImages = [
-          "/images/hero_futsal.webp",
-          "/images/pack_metodologico.webp",
+          "/images/hero_pack.webp",
+          "/images/sample_1.webp",
+          "/images/sample_2.webp",
+          "/images/sample_3.webp",
+          "/images/sample_4.webp",
+          "/images/sample_5.webp",
           "/images/bono_1.webp",
           "/images/bono_2.webp",
           "/images/bono_3.webp",
@@ -142,22 +145,10 @@
           "/images/bono_7.webp",
           "/images/bono_8.webp",
           "/images/bono_9.webp",
-          "/images/bono_10.webp",
-          "/images/sample_1.webp",
-          "/images/sample_2.webp",
-          "/images/sample_3.webp",
-          "/images/sample_4.webp",
-          "https://i.ibb.co/nNt6XT4L/100-Ejercicios-para-Desarrollar-la-Velocidad-en-el-F-tbol-Sala.png",
-          "https://i.ibb.co/SwQ6fRLC/100-Ejercicios-con-Bal-n-para-Desarrollar-la-Resistencia-en-F-tbol-Sala.png",
-          "https://i.ibb.co/p6cYq9FX/60-Ejercicios-F-sicos-con-S-lo-un-Peque-o-Equipamiento-en-F-tbol-Sala.png",
-          "https://i.ibb.co/ZR3C4NtX/24-Plantillas-de-Entrenamientos-de-F-tbol-Sala.png",
-          "https://i.ibb.co/SXTyZ5B2/Lecciones-en-video.png",
-          "https://i.ibb.co/230qRCYf/Ejercicios-Adicionales-de-F-tbol-Sala.png",
-          "https://i.ibb.co/DFpPRLx/Chat-GPT-Image-9-de-ago-de-2026-08-03-36.png",
-          "https://i.ibb.co/4n3r3Xr0/100-Fichas-para-el-Entrenamiento-de-F-tbol-Sala-en-Categor-a-Senior.png",
-          "https://i.ibb.co/HLp3cHRS/Fundamentos-T-cticos-Estrat-gicos-del-F-tbol-Sala.png",
-          "https://i.ibb.co/60BzgSBx/Nociones-de-Preparacio-n-Fi-sica-en-el-Fu-tbol-Sala.png",
-          "https://i.ibb.co/bMHqG5z9/img-20190102-wa0036.webp"
+          "/images/testimonial_1.webp",
+          "/images/testimonial_2.webp",
+          "/images/testimonial_3.webp",
+          "/images/author.webp"
         ];
         // Instantly prefetch all images into browser cache with high concurrency
         for (var i = 0; i < catalogImages.length; i++) {

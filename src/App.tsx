@@ -66,11 +66,11 @@ const safeLocalStorage = {
 };
 
 const PRODUCT_IMAGES = [
-  { src: "https://i.ibb.co/rR7jStKk/Screenshot-20260829-210037-Adobe-Acrobat.jpg", fallback: "https://i.ibb.co/rR7jStKk/Screenshot-20260829-210037-Adobe-Acrobat.jpg" },
-  { src: "https://i.ibb.co/3Yk31TNL/Screenshot-20260829-210055-Adobe-Acrobat.jpg", fallback: "https://i.ibb.co/3Yk31TNL/Screenshot-20260829-210055-Adobe-Acrobat.jpg" },
-  { src: "https://i.ibb.co/Zp5YNyDT/Screenshot-20260829-210115-Adobe-Acrobat.jpg", fallback: "https://i.ibb.co/Zp5YNyDT/Screenshot-20260829-210115-Adobe-Acrobat.jpg" },
-  { src: "https://i.ibb.co/xtP1dfrq/Screenshot-20260829-210132-Adobe-Acrobat.jpg", fallback: "https://i.ibb.co/xtP1dfrq/Screenshot-20260829-210132-Adobe-Acrobat.jpg" },
-  { src: "https://i.ibb.co/B2G08Mhb/Screenshot-20260829-210150-Adobe-Acrobat.jpg", fallback: "https://i.ibb.co/B2G08Mhb/Screenshot-20260829-210150-Adobe-Acrobat.jpg" }
+  { src: "/images/sample_1.webp", fallback: "https://i.ibb.co/rR7jStKk/Screenshot-20260829-210037-Adobe-Acrobat.jpg" },
+  { src: "/images/sample_2.webp", fallback: "https://i.ibb.co/3Yk31TNL/Screenshot-20260829-210055-Adobe-Acrobat.jpg" },
+  { src: "/images/sample_3.webp", fallback: "https://i.ibb.co/Zp5YNyDT/Screenshot-20260829-210115-Adobe-Acrobat.jpg" },
+  { src: "/images/sample_4.webp", fallback: "https://i.ibb.co/xtP1dfrq/Screenshot-20260829-210132-Adobe-Acrobat.jpg" },
+  { src: "/images/sample_5.webp", fallback: "https://i.ibb.co/B2G08Mhb/Screenshot-20260829-210150-Adobe-Acrobat.jpg" }
 ];
 
 declare global {
@@ -265,9 +265,9 @@ export default function App() {
           {/* User Requested Image */}
           <div className="my-6 flex justify-center w-full max-w-3xl sm:max-w-4xl min-h-[320px] sm:min-h-[460px] md:min-h-[520px] relative mx-auto">
             <OptimizedImage 
-              src="https://i.ibb.co/9Hv5krQH/Chat-GPT-Image-29-de-ago-de-2026-07-40-17.png" 
+              src="/images/hero_pack.webp" 
               fallbackSrc="https://i.ibb.co/9Hv5krQH/Chat-GPT-Image-29-de-ago-de-2026-07-40-17.png"
-              alt="Chat-GPT-Image-29-de-ago-de-2026-07-40-17" 
+              alt="Pack Metodológico de Fútbol" 
               className="w-full h-full max-h-[550px] object-contain drop-shadow-2xl transition-transform duration-300 hover:scale-[1.02]"
               referrerPolicy="no-referrer"
               loading="eager"
@@ -717,7 +717,7 @@ export default function App() {
             {/* Product image */}
             <div className="flex justify-center mb-8 relative w-full min-h-[300px] sm:min-h-[420px] md:min-h-[480px]">
               <OptimizedImage
-                src="https://i.ibb.co/9Hv5krQH/Chat-GPT-Image-29-de-ago-de-2026-07-40-17.png"
+                src="/images/hero_pack.webp"
                 fallbackSrc="https://i.ibb.co/9Hv5krQH/Chat-GPT-Image-29-de-ago-de-2026-07-40-17.png"
                 alt="Planes de Entrenamientos Completos de Fútbol"
                 referrerPolicy="no-referrer"
@@ -776,9 +776,6 @@ export default function App() {
                   {formattedPrice}
                 </span>
               </div>
-              <p className="text-xs sm:text-sm font-semibold text-slate-500 tracking-wide mt-1">
-                (Puedes pagar en tu moneda local)
-              </p>
             </div>
 
             {/* Divider */}

@@ -102,7 +102,7 @@ export const BONUSES: BonusItem[] = [
     description: "Ejercicios prácticos con y sin balón enfocados en la velocidad de reacción, aceleración y agilidad coordinada.",
     originalPrice: 29,
     tag: "POTENCIA Y REACCIÓN",
-    image: "https://i.ibb.co/9HFkMT12/Chat-GPT-Image-29-de-ago-de-2026-20-24-41.png",
+    image: "/images/bono_1.webp",
     fallbackImage: "https://i.ibb.co/9HFkMT12/Chat-GPT-Image-29-de-ago-de-2026-20-24-41.png"
   },
   {
@@ -112,7 +112,7 @@ export const BONUSES: BonusItem[] = [
     description: "Métodos de preparación física integrada con balón para acelerar la ganancia de resistencia específica de juego y mantener alta la motivación.",
     originalPrice: 35,
     tag: "RESISTENCIA INTEGRADA",
-    image: "https://i.ibb.co/LKHYJ2f/Chat-GPT-Image-29-de-ago-de-2026-20-28-37.png",
+    image: "/images/bono_2.webp",
     fallbackImage: "https://i.ibb.co/LKHYJ2f/Chat-GPT-Image-29-de-ago-de-2026-20-28-37.png"
   },
   {
@@ -122,7 +122,7 @@ export const BONUSES: BonusItem[] = [
     description: "Rutinas dinámicas optimizadas para entrenar fuerza, potencia y estabilidad utilizando materiales mínimos y portátiles.",
     originalPrice: 24,
     tag: "EQUIPAMIENTO MÍNIMO",
-    image: "https://i.ibb.co/Zppc1F1D/Chat-GPT-Image-29-de-ago-de-2026-20-35-08.png",
+    image: "/images/bono_3.webp",
     fallbackImage: "https://i.ibb.co/Zppc1F1D/Chat-GPT-Image-29-de-ago-de-2026-20-35-08.png"
   },
   {
@@ -132,7 +132,7 @@ export const BONUSES: BonusItem[] = [
     description: "Plantillas de diagramación, planillas de control de asistencia, fichas tácticas y hojas de anotación para estructurar tus entrenamientos de forma profesional.",
     originalPrice: 25,
     tag: "PLANTILLAS Y DISEÑO",
-    image: "https://i.ibb.co/Y4kLZGb3/Chat-GPT-Image-29-de-ago-de-2026-20-37-24.png",
+    image: "/images/bono_4.webp",
     fallbackImage: "https://i.ibb.co/Y4kLZGb3/Chat-GPT-Image-29-de-ago-de-2026-20-37-24.png"
   },
   {
@@ -142,7 +142,7 @@ export const BONUSES: BonusItem[] = [
     description: "Acceso exclusivo a nuestra videoteca con clases tácticas y metodológicas en video, paso a paso, todo muy practical e intuitivo.",
     originalPrice: 49,
     tag: "APRENDIZAJE VISUAL",
-    image: "https://i.ibb.co/pv9WZF7P/Chat-GPT-Image-29-de-ago-de-2026-20-43-32.png",
+    image: "/images/bono_5.webp",
     fallbackImage: "https://i.ibb.co/pv9WZF7P/Chat-GPT-Image-29-de-ago-de-2026-20-43-32.png"
   },
   {
@@ -152,7 +152,7 @@ export const BONUSES: BonusItem[] = [
     description: "Guía completa de planificación física para optimizar la resistencia, fuerza explosiva, velocidad y prevención de lesiones en todas las etapas competitivas.",
     originalPrice: 35,
     tag: "PREPARACIÓN FÍSICA",
-    image: "https://i.ibb.co/399HqtqR/Chat-GPT-Image-29-de-ago-de-2026-20-46-58.png",
+    image: "/images/bono_6.webp",
     fallbackImage: "https://i.ibb.co/399HqtqR/Chat-GPT-Image-29-de-ago-de-2026-20-46-58.png"
   },
   {
@@ -162,7 +162,7 @@ export const BONUSES: BonusItem[] = [
     description: "Guía completa de ejercicios de remates a portería, disparos tras regate, definición al primer toque y situaciones de 1x1 ante el portero.",
     originalPrice: 38,
     tag: "DEFINICIÓN Y REMATE",
-    image: "https://i.ibb.co/FqBRBvR1/Chat-GPT-Image-29-de-ago-de-2026-20-45-06.png",
+    image: "/images/bono_7.webp",
     fallbackImage: "https://i.ibb.co/FqBRBvR1/Chat-GPT-Image-29-de-ago-de-2026-20-45-06.png"
   },
   {
@@ -172,7 +172,7 @@ export const BONUSES: BonusItem[] = [
     description: "Una recopilación exclusiva con esquemas tácticos extras, variantes avanzadas de posesión, presión alta y jugadas a balón parado específicas para fútbol sala.",
     originalPrice: 19,
     tag: "EJERCICIOS ADICIONALES",
-    image: "https://i.ibb.co/JWmhMQJk/Ejercicios-Adicionales-de-F-tbol-Sala.png",
+    image: "/images/bono_8.webp",
     fallbackImage: "https://i.ibb.co/JWmhMQJk/Ejercicios-Adicionales-de-F-tbol-Sala.png"
   },
   {
@@ -182,7 +182,7 @@ export const BONUSES: BonusItem[] = [
     description: "Planificación metodológica especializada en el entrenamiento de arqueros: potencia explosiva, velocidad de reacción, agilidad bajo palos, caídas y reflejos coordinativos.",
     originalPrice: 29,
     tag: "ENTRENAMIENTO DE PORTEROS",
-    image: "https://i.ibb.co/qF7XwgXv/Chat-GPT-Image-29-de-ago-de-2026-22-24-02.png",
+    image: "/images/bono_9.webp",
     fallbackImage: "https://i.ibb.co/qF7XwgXv/Chat-GPT-Image-29-de-ago-de-2026-22-24-02.png"
   }
 ];
@@ -196,7 +196,7 @@ export const TESTIMONIALS: TestimonialItem[] = [
     rating: 5,
     achievement: "✓ 90% de ahorro de tiempo planificando",
     avatarSeed: "carlos",
-    avatarUrl: "https://i.ibb.co/n8kV44L4/b3776243-7460-49de-9c89-93fabad5379e.avif"
+    avatarUrl: "/images/testimonial_1.webp"
   },
   {
     id: "test-2",
@@ -206,7 +206,7 @@ export const TESTIMONIALS: TestimonialItem[] = [
     rating: 5,
     achievement: "✓ Estandarización de metodología en su club",
     avatarSeed: "andres",
-    avatarUrl: "https://i.ibb.co/gM4xj0Rb/treinador-de-futebol-indoor-observando-os-jogadores-durante-o-treino-406939-27210.avif"
+    avatarUrl: "/images/testimonial_2.webp"
   },
   {
     id: "test-3",
@@ -216,7 +216,7 @@ export const TESTIMONIALS: TestimonialItem[] = [
     rating: 5,
     achievement: "✓ Aplicación práctica inmediata",
     avatarSeed: "jose",
-    avatarUrl: "https://i.postimg.cc/jq7t599j/istockphoto-515225171-612x612.jpg"
+    avatarUrl: "/images/testimonial_3.webp"
   }
 ];
 
@@ -253,7 +253,7 @@ export const CREATOR_INFO = {
   role: "Especialista en Metodología Táctica & Entrenador de Fútbol",
   experience: "+30 Años de Experiencia",
   // >>> COLOQUE AQUI O LINK DA FOTO DE LUCIAN SÁNCHEZ <<<
-  photoUrl: "https://i.ibb.co/bMHqG5z9/img-20190102-wa0036.webp",
+  photoUrl: "/images/author.webp",
   bio: [
     "Hola, soy Lucian Sánchez. Con más de 30 años de trayectoria técnica y formativa en el fútbol, reuní y sistematicé toda mi experiencia en esta Biblioteca de +2000 Sesiones y Manuales Metodológicos.",
     "Mi objetivo es darte una herramienta práctica y de aplicación directa para que ahorres horas de planificación y eleves el nivel competitivo de tu equipo desde el primer día."

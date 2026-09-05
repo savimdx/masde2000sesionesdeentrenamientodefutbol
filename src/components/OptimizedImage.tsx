@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { BookOpen } from 'lucide-react';
 
 export interface OptimizedImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
@@ -30,20 +30,34 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
   const [currentSrc, setCurrentSrc] = useState(src);
   const [triedFallback, setTriedFallback] = useState(false);
   const [hasError, setHasError] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const imgRef = useRef<HTMLImageElement>(null);
 
   useEffect(() => {
     setCurrentSrc(src);
     setTriedFallback(false);
     setHasError(false);
+    setIsLoaded(false);
   }, [src]);
+
+  useEffect(() => {
+    if (imgRef.current && imgRef.current.complete && imgRef.current.naturalWidth > 0) {
+      setIsLoaded(true);
+    }
+  }, [currentSrc]);
 
   const handleError = () => {
     if (fallbackSrc && !triedFallback && currentSrc !== fallbackSrc) {
       setTriedFallback(true);
       setCurrentSrc(fallbackSrc);
+      setIsLoaded(false);
     } else {
       setHasError(true);
     }
+  };
+
+  const handleLoad = () => {
+    setIsLoaded(true);
   };
 
   if (hasError) {
@@ -57,6 +71,7 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
 
   return (
     <img
+      ref={imgRef}
       src={currentSrc}
       alt={alt}
       loading={loading}
@@ -64,7 +79,8 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
       // @ts-ignore
       fetchPriority={fetchPriority}
       referrerPolicy={referrerPolicy}
-      className={className}
+      className={`${className} transition-opacity duration-200 ${isLoaded ? 'opacity-100' : 'opacity-90'}`}
+      onLoad={handleLoad}
       onError={handleError}
       {...props}
     />
