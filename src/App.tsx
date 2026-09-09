@@ -80,28 +80,14 @@ declare global {
 }
 
 export function redirectWithParams(destination: string) {
-  try {
-    const currentParams = window.location.search;
-    let targetUrl = destination;
+  var currentParams = window.location.search;
 
-    if (currentParams) {
-      if (destination.includes("?")) {
-        targetUrl = destination + "&" + currentParams.substring(1);
-      } else {
-        targetUrl = destination + currentParams;
-      }
-    }
-
-    if (typeof window !== 'undefined' && window.self !== window.top) {
-      window.open(targetUrl, '_blank', 'noopener,noreferrer');
-    } else {
-      window.location.href = targetUrl;
-    }
-  } catch (e) {
-    if (typeof window !== 'undefined') {
-      window.open(destination, '_blank', 'noopener,noreferrer');
-    }
+  if (currentParams) {
+    var separator = destination.includes("?") ? "&" : "?";
+    destination = destination + separator + currentParams.substring(1);
   }
+
+  window.location.href = destination;
 }
 
 if (typeof window !== 'undefined') {
@@ -138,53 +124,7 @@ export default function App() {
   const [expandedFaq, setExpandedFaq] = useState<string | null>(null);
   const [timeLeft, setTimeLeft] = useState<number>(1800); // 30 minutes in seconds
   const [isVideoPlayRequested, setIsVideoPlayRequested] = useState<boolean>(false);
-  const [checkoutUrl, setCheckoutUrl] = useState<string>("https://pay.hotmart.com/E107379450E?checkoutMode=10");
-
-  useEffect(() => {
-    // Capture tracking and UTM parameters from URL and persist them
-    const searchParams = new URLSearchParams(window.location.search);
-    const trackingParams: Record<string, string> = {};
-    
-    const keysToForward = [
-      'utm_source',
-      'utm_medium',
-      'utm_campaign',
-      'utm_term',
-      'utm_content',
-      'src',
-      'sck',
-      'xcod',
-      'fbclid',
-      'gclid'
-    ];
-    
-    // 1. Retrieve any previously stored tracking values from this session/device
-    keysToForward.forEach(key => {
-      const savedVal = safeLocalStorage.getItem(`track_${key}`);
-      if (savedVal) {
-        trackingParams[key] = savedVal;
-      }
-    });
-    
-    // 2. Overwrite with any new tracking values found in the current URL search query
-    keysToForward.forEach(key => {
-      const val = searchParams.get(key);
-      if (val) {
-        trackingParams[key] = val;
-        safeLocalStorage.setItem(`track_${key}`, val);
-      }
-    });
-    
-    // 3. Construct the final Hotmart checkout link with all parameters appended
-    const baseUrl = "https://pay.hotmart.com/E107379450E";
-    const baseParams = new URLSearchParams("checkoutMode=10");
-    
-    Object.entries(trackingParams).forEach(([key, val]) => {
-      baseParams.set(key, val);
-    });
-    
-    setCheckoutUrl(`${baseUrl}?${baseParams.toString()}`);
-  }, []);
+  const checkoutUrl = "https://pay.hotmart.com/E107379450E?checkoutMode=10";
 
   useEffect(() => {
     const now = Math.floor(Date.now() / 1000);
