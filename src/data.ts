@@ -103,7 +103,7 @@ export const BONUSES: BonusItem[] = [
     originalPrice: 39,
     tag: "METODOLOGÍA & TALENTO",
     image: "/images/bono_1_custom.webp",
-    fallbackImage: "https://i.ibb.co/bMZ01zfw/Captura-de-tela-2026-09-24-104418.png"
+    fallbackImage: "https://i.ibb.co/FkcVg9Wn/Gemini-Generated-Image-gow5nfgow5nfgow5.jpg"
   },
   {
     id: "bon-guardiola",
@@ -133,7 +133,7 @@ export const BONUSES: BonusItem[] = [
     originalPrice: 45,
     tag: "MODELO LA MASIA & ADN",
     image: "/images/bono_metodologia_barca_custom.webp",
-    fallbackImage: "https://i.ibb.co/xtBrTYxn/Chat-GPT-Image-24-de-set-de-2026-11-31-59.png"
+    fallbackImage: "https://i.ibb.co/yFLsncb8/Chat-GPT-Image-24-de-set-de-2026-11-31-59.png"
   },
   {
     id: "bon-2",
