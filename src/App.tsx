@@ -650,7 +650,7 @@ export default function App() {
                 Planes de Entrenamientos Completos
               </h3>
               <p className="text-xs sm:text-sm text-orange-500 font-semibold italic">
-                Producto principal + 9 bonificaciones tácticas exclusivas
+                Producto principal + 10 bonificaciones tácticas exclusivas
               </p>
             </div>
 
@@ -706,7 +706,7 @@ export default function App() {
             {/* Price section */}
             <div id="precio-oferta" className="text-center space-y-1.5 mb-6">
               <div className="flex items-center justify-center gap-3 text-xs sm:text-sm font-bold text-slate-500">
-                <span>Antes <span className="text-red-500 font-extrabold line-through">{convertAndFormat(391)}</span></span>
+                <span>Antes <span className="text-red-500 font-extrabold line-through">{convertAndFormat(485)}</span></span>
                 <span className="bg-emerald-100 text-emerald-700 text-[10px] sm:text-xs font-black px-2.5 py-0.5 rounded-full uppercase tracking-wider">
                   90% DTO.
                 </span>

@@ -96,18 +96,38 @@ export const BENEFITS: BenefitItem[] = [
 
 export const BONUSES: BonusItem[] = [
   {
-    id: "bon-1",
+    id: "bon-messi",
     number: 1,
-    title: "100 Ejercicios para Desarrollar la Velocidad en el Fútbol",
-    description: "Ejercicios prácticos con y sin balón enfocados en la velocidad de reacción, aceleración y agilidad coordinada.",
-    originalPrice: 29,
-    tag: "POTENCIA Y REACCIÓN",
-    image: "/images/bono_1.webp",
-    fallbackImage: "https://i.ibb.co/9HFkMT12/Chat-GPT-Image-29-de-ago-de-2026-20-24-41.png"
+    title: "El Método Messi",
+    description: "Análisis técnico y ejercicios prácticos inspirados en el juego de Lionel Messi: regate corto en espacios reducidos, cambios de ritmo explosivos, visión periférica y definición de alta efectividad.",
+    originalPrice: 39,
+    tag: "METODOLOGÍA & TALENTO",
+    image: "/images/bono_1_custom.webp",
+    fallbackImage: "https://i.ibb.co/bMZ01zfw/Captura-de-tela-2026-09-24-104418.png"
+  },
+  {
+    id: "bon-guardiola",
+    number: 2,
+    title: "Ejercicios y Mandamientos de Pep Guardiola",
+    description: "Los principios tácticos fundamentales y tareas de campo del modelo Guardiola: salida limpia de balón bajo presión, superioridad numérica, rondos tácticos avanzados y la regla de los 6 segundos tras pérdida.",
+    originalPrice: 45,
+    tag: "JUEGO DE POSICIÓN & TÁCTICA",
+    image: "/images/bono_2_custom.webp",
+    fallbackImage: "https://i.ibb.co/9m3gvqL8/Chat-GPT-Image-24-de-set-de-2026-10-33-16.png"
+  },
+  {
+    id: "bon-tacticos-base",
+    number: 3,
+    title: "500 Ejercicios Tácticos para Fútbol Base",
+    description: "El mayor compendio de tareas tácticas adaptadas para fútbol formativo: ocupación inteligente del espacio, repliegue ordenado, presión en bloque y ejercicios dinámicos por categorías.",
+    originalPrice: 39,
+    tag: "FÚTBOL BASE FORMATIVO",
+    image: "/images/bono_3_custom.webp",
+    fallbackImage: "https://i.ibb.co/G3d3hK5x/Chat-GPT-Image-24-de-set-de-2026-10-26-12.png"
   },
   {
     id: "bon-2",
-    number: 2,
+    number: 4,
     title: "100 Ejercicios con Balón para Desarrollar la Resistencia en Fútbol",
     description: "Métodos de preparación física integrada con balón para acelerar la ganancia de resistencia específica de juego y mantener alta la motivación.",
     originalPrice: 35,
@@ -117,7 +137,7 @@ export const BONUSES: BonusItem[] = [
   },
   {
     id: "bon-4",
-    number: 3,
+    number: 5,
     title: "60 Ejercicios Físicos con Sólo un Pequeño Equipamiento en Fútbol",
     description: "Rutinas dinámicas optimizadas para entrenar fuerza, potencia y estabilidad utilizando materiales mínimos y portátiles.",
     originalPrice: 24,
@@ -127,7 +147,7 @@ export const BONUSES: BonusItem[] = [
   },
   {
     id: "bon-8",
-    number: 4,
+    number: 6,
     title: "24 Plantillas de Entrenamientos de Fútbol",
     description: "Plantillas de diagramación, planillas de control de asistencia, fichas tácticas y hojas de anotación para estructurar tus entrenamientos de forma profesional.",
     originalPrice: 25,
@@ -137,7 +157,7 @@ export const BONUSES: BonusItem[] = [
   },
   {
     id: "bon-9",
-    number: 5,
+    number: 7,
     title: "Lecciones en Video de Fútbol",
     description: "Acceso exclusivo a nuestra videoteca con clases tácticas y metodológicas en video, paso a paso, todo muy practical e intuitivo.",
     originalPrice: 49,
@@ -147,7 +167,7 @@ export const BONUSES: BonusItem[] = [
   },
   {
     id: "bon-10",
-    number: 6,
+    number: 8,
     title: "Manual Práctico de Preparación Física en el Fútbol",
     description: "Guía completa de planificación física para optimizar la resistencia, fuerza explosiva, velocidad y prevención de lesiones en todas las etapas competitivas.",
     originalPrice: 35,
@@ -156,34 +176,14 @@ export const BONUSES: BonusItem[] = [
     fallbackImage: "https://i.ibb.co/399HqtqR/Chat-GPT-Image-29-de-ago-de-2026-20-46-58.png"
   },
   {
-    id: "bon-13",
-    number: 7,
-    title: "100 Ejercicios de Finalizaciones en Fútbol",
-    description: "Guía completa de ejercicios de remates a portería, disparos tras regate, definición al primer toque y situaciones de 1x1 ante el portero.",
-    originalPrice: 38,
-    tag: "DEFINICIÓN Y REMATE",
-    image: "/images/bono_7.webp",
-    fallbackImage: "https://i.ibb.co/FqBRBvR1/Chat-GPT-Image-29-de-ago-de-2026-20-45-06.png"
-  },
-  {
     id: "bon-18",
-    number: 8,
+    number: 9,
     title: "Ejercicios Adicionales de Fútbol Sala",
     description: "Una recopilación exclusiva con esquemas tácticos extras, variantes avanzadas de posesión, presión alta y jugadas a balón parado específicas para fútbol sala.",
     originalPrice: 19,
     tag: "EJERCICIOS ADICIONALES",
     image: "/images/bono_8.webp",
     fallbackImage: "https://i.ibb.co/JWmhMQJk/Ejercicios-Adicionales-de-F-tbol-Sala.png"
-  },
-  {
-    id: "bon-19",
-    number: 9,
-    title: "80 Ejercicios Físicos para el Portero de Fútbol",
-    description: "Planificación metodológica especializada en el entrenamiento de arqueros: potencia explosiva, velocidad de reacción, agilidad bajo palos, caídas y reflejos coordinativos.",
-    originalPrice: 29,
-    tag: "ENTRENAMIENTO DE PORTEROS",
-    image: "/images/bono_9.webp",
-    fallbackImage: "https://i.ibb.co/qF7XwgXv/Chat-GPT-Image-29-de-ago-de-2026-22-24-02.png"
   }
 ];
 

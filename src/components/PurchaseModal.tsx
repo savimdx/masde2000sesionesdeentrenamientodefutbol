@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ShieldCheck, Lock, CreditCard, ChevronRight, CheckCircle, Download, BookOpen, Star, Play } from 'lucide-react';
 import { useCurrency } from '../context/CurrencyContext';
+import { BONUSES } from '../data';
 
 interface PurchaseModalProps {
   isOpen: boolean;
@@ -71,7 +72,7 @@ export default function PurchaseModal({ isOpen, onClose }: PurchaseModalProps) {
                 <span className="text-xs text-slate-400 line-through">{convertAndFormat(391)}</span>
               </div>
               <div className="flex justify-between items-center text-emerald-600">
-                <span className="text-xs font-semibold">Bono #1 al #9 (Manuales y Lecciones en Video)</span>
+                <span className="text-xs font-semibold">Bono #1 al #{BONUSES.length} (Manuales y Lecciones en Video)</span>
                 <span className="text-xs font-bold uppercase">GRATIS</span>
               </div>
               <div className="h-[1px] bg-slate-200 my-2" />
@@ -231,13 +232,13 @@ export default function PurchaseModal({ isOpen, onClose }: PurchaseModalProps) {
             <div className="w-full bg-slate-50 border border-slate-200 rounded-xl p-4 my-6 text-left space-y-4">
               <p className="text-[11px] font-bold text-slate-500 uppercase tracking-wider border-b border-slate-200 pb-2 flex items-center justify-between">
                 <span>ARCHIVOS LISTOS PARA DESCARGAR:</span>
-                <span className="text-emerald-600 font-mono">11 ARCHIVOS DIGITALES</span>
+                <span className="text-emerald-600 font-mono">{BONUSES.length + 1} ARCHIVOS DIGITALES</span>
               </p>
 
-              {/* Download link 1 */}
+              {/* Download link 1 - Manual Principal */}
               <div className="flex items-center justify-between gap-2 bg-white p-2.5 rounded-lg border border-slate-200">
                 <div className="flex items-center gap-2">
-                  <BookOpen className="w-4 h-4 text-amber-500" />
+                  <BookOpen className="w-4 h-4 text-amber-500 shrink-0" />
                   <div>
                     <p className="text-xs font-bold text-slate-800">Manual Principal: +2000 Sesiones</p>
                     <p className="text-[10px] text-slate-400">Formato PDF • 45.8 MB</p>
@@ -246,264 +247,39 @@ export default function PurchaseModal({ isOpen, onClose }: PurchaseModalProps) {
                 <a
                   href="#"
                   onClick={(e) => e.preventDefault()}
-                  className="bg-emerald-600 hover:bg-emerald-500 text-white p-2 rounded-lg transition-colors flex items-center justify-center"
+                  className="bg-emerald-600 hover:bg-emerald-500 text-white p-2 rounded-lg transition-colors flex items-center justify-center shrink-0"
                   title="Descargar archivo"
                 >
                   <Download className="w-3.5 h-3.5" />
                 </a>
               </div>
 
-              {/* Download link 2 */}
-              <div className="flex items-center justify-between gap-2 bg-white p-2.5 rounded-lg border border-slate-200">
-                <div className="flex items-center gap-2">
-                  <Star className="w-4 h-4 text-emerald-600" />
-                  <div>
-                    <p className="text-xs font-bold text-slate-800">Bono 1: 100 Ejercicios de Velocidad</p>
-                    <p className="text-[10px] text-slate-400">Formato PDF • 10.1 MB</p>
+              {/* Dynamic bonus downloads */}
+              {BONUSES.map((bonus) => (
+                <div key={bonus.id} className="flex items-center justify-between gap-2 bg-white p-2.5 rounded-lg border border-slate-200">
+                  <div className="flex items-center gap-2">
+                    {bonus.id === 'bon-9' ? (
+                      <Play className="w-4 h-4 text-emerald-500 shrink-0" />
+                    ) : (
+                      <Star className="w-4 h-4 text-amber-500 shrink-0" />
+                    )}
+                    <div>
+                      <p className="text-xs font-bold text-slate-800">Bono {bonus.number}: {bonus.title}</p>
+                      <p className="text-[10px] text-slate-400">
+                        {bonus.id === 'bon-9' ? 'Video Clases MP4 • Acceso Online Directo' : 'Formato PDF • Acceso Inmediato'}
+                      </p>
+                    </div>
                   </div>
+                  <a
+                    href="#"
+                    onClick={(e) => e.preventDefault()}
+                    className="bg-emerald-600 hover:bg-emerald-500 text-white p-2 rounded-lg transition-colors flex items-center justify-center shrink-0"
+                    title="Descargar archivo"
+                  >
+                    <Download className="w-3.5 h-3.5" />
+                  </a>
                 </div>
-                <a
-                  href="#"
-                  onClick={(e) => e.preventDefault()}
-                  className="bg-emerald-600 hover:bg-emerald-500 text-white p-2 rounded-lg transition-colors flex items-center justify-center"
-                >
-                  <Download className="w-3.5 h-3.5" />
-                </a>
-              </div>
-
-              {/* Download link 3 */}
-              <div className="flex items-center justify-between gap-2 bg-white p-2.5 rounded-lg border border-slate-200">
-                <div className="flex items-center gap-2">
-                  <Star className="w-4 h-4 text-amber-500" />
-                  <div>
-                    <p className="text-xs font-bold text-slate-800">Bono 2: 100 Ejercicios de Resistencia</p>
-                    <p className="text-[10px] text-slate-400">Formato PDF • 12.4 MB</p>
-                  </div>
-                </div>
-                <a
-                  href="#"
-                  onClick={(e) => e.preventDefault()}
-                  className="bg-emerald-600 hover:bg-emerald-500 text-white p-2 rounded-lg transition-colors flex items-center justify-center"
-                >
-                  <Download className="w-3.5 h-3.5" />
-                </a>
-              </div>
-
-              {/* Download link 4 */}
-              <div className="flex items-center justify-between gap-2 bg-white p-2.5 rounded-lg border border-slate-200">
-                <div className="flex items-center gap-2">
-                  <Star className="w-4 h-4 text-blue-600" />
-                  <div>
-                    <p className="text-xs font-bold text-slate-800">Bono 3: 60 Ejercicios - Equipamiento Mínimo</p>
-                    <p className="text-[10px] text-slate-400">Formato PDF • 8.7 MB</p>
-                  </div>
-                </div>
-                <a
-                  href="#"
-                  onClick={(e) => e.preventDefault()}
-                  className="bg-emerald-600 hover:bg-emerald-500 text-white p-2 rounded-lg transition-colors flex items-center justify-center"
-                >
-                  <Download className="w-3.5 h-3.5" />
-                </a>
-              </div>
-
-              {/* Download link 5 */}
-              <div className="flex items-center justify-between gap-2 bg-white p-2.5 rounded-lg border border-slate-200">
-                <div className="flex items-center gap-2">
-                  <Star className="w-4 h-4 text-pink-600" />
-                  <div>
-                    <p className="text-xs font-bold text-slate-800">Bono 4: 50 Ejercicios Físicos con Balón</p>
-                    <p className="text-[10px] text-slate-400">Formato PDF • 9.3 MB</p>
-                  </div>
-                </div>
-                <a
-                  href="#"
-                  onClick={(e) => e.preventDefault()}
-                  className="bg-emerald-600 hover:bg-emerald-500 text-white p-2 rounded-lg transition-colors flex items-center justify-center"
-                >
-                  <Download className="w-3.5 h-3.5" />
-                </a>
-              </div>
-
-               {/* Download link 6 */}
-              <div className="flex items-center justify-between gap-2 bg-white p-2.5 rounded-lg border border-slate-200">
-                <div className="flex items-center gap-2">
-                  <Star className="w-4 h-4 text-purple-600" />
-                  <div>
-                    <p className="text-xs font-bold text-slate-800">Bono 5: Fundamentos Tácticos y Estratégicos</p>
-                    <p className="text-[10px] text-slate-400">Formato PDF • 18.2 MB</p>
-                  </div>
-                </div>
-                <a
-                  href="#"
-                  onClick={(e) => e.preventDefault()}
-                  className="bg-emerald-600 hover:bg-emerald-500 text-white p-2 rounded-lg transition-colors flex items-center justify-center"
-                >
-                  <Download className="w-3.5 h-3.5" />
-                </a>
-              </div>
-
-              {/* Download link 7 */}
-              <div className="flex items-center justify-between gap-2 bg-white p-2.5 rounded-lg border border-slate-200">
-                <div className="flex items-center gap-2">
-                  <Star className="w-4 h-4 text-rose-500" />
-                  <div>
-                    <p className="text-xs font-bold text-slate-800">Bono 6: Nociones de Preparación Física</p>
-                    <p className="text-[10px] text-slate-400">Formato PDF • 14.5 MB</p>
-                  </div>
-                </div>
-                <a
-                  href="#"
-                  onClick={(e) => e.preventDefault()}
-                  className="bg-emerald-600 hover:bg-emerald-500 text-white p-2 rounded-lg transition-colors flex items-center justify-center"
-                >
-                  <Download className="w-3.5 h-3.5" />
-                </a>
-              </div>
-
-              {/* Download link 8 */}
-              <div className="flex items-center justify-between gap-2 bg-white p-2.5 rounded-lg border border-slate-200">
-                <div className="flex items-center gap-2">
-                  <Star className="w-4 h-4 text-cyan-500" />
-                  <div>
-                    <p className="text-xs font-bold text-slate-800">Bono 7: 100 Fichas de Entrenamiento Senior</p>
-                    <p className="text-[10px] text-slate-400">Formato PDF • 9.8 MB</p>
-                  </div>
-                </div>
-                <a
-                  href="#"
-                  onClick={(e) => e.preventDefault()}
-                  className="bg-emerald-600 hover:bg-emerald-500 text-white p-2 rounded-lg transition-colors flex items-center justify-center"
-                >
-                  <Download className="w-3.5 h-3.5" />
-                </a>
-              </div>
-
-              {/* Download link 9 */}
-              <div className="flex items-center justify-between gap-2 bg-white p-2.5 rounded-lg border border-slate-200">
-                <div className="flex items-center gap-2">
-                  <Star className="w-4 h-4 text-indigo-500" />
-                  <div>
-                    <p className="text-xs font-bold text-slate-800">Bono 8: 24 Plantillas de Entrenamientos</p>
-                    <p className="text-[10px] text-slate-400">Formato PDF • 11.2 MB</p>
-                  </div>
-                </div>
-                <a
-                  href="#"
-                  onClick={(e) => e.preventDefault()}
-                  className="bg-emerald-600 hover:bg-emerald-500 text-white p-2 rounded-lg transition-colors flex items-center justify-center"
-                >
-                  <Download className="w-3.5 h-3.5" />
-                </a>
-              </div>
-
-              {/* Download link 10 */}
-              <div className="flex items-center justify-between gap-2 bg-white p-2.5 rounded-lg border border-slate-200">
-                <div className="flex items-center gap-2">
-                  <Play className="w-4 h-4 text-emerald-500" />
-                  <div>
-                    <p className="text-xs font-bold text-slate-800">Bono 9: Lecciones en Video de Fútbol</p>
-                    <p className="text-[10px] text-slate-400">Video Clases MP4 • Acceso Online Directo</p>
-                  </div>
-                </div>
-                <a
-                  href="#"
-                  onClick={(e) => e.preventDefault()}
-                  className="bg-emerald-600 hover:bg-emerald-500 text-white p-2 rounded-lg transition-colors flex items-center justify-center"
-                >
-                  <Download className="w-3.5 h-3.5" />
-                </a>
-              </div>
-
-              {/* Download link 11 */}
-              <div className="flex items-center justify-between gap-2 bg-white p-2.5 rounded-lg border border-slate-200">
-                <div className="flex items-center gap-2">
-                  <Star className="w-4 h-4 text-amber-500" />
-                  <div>
-                    <p className="text-xs font-bold text-slate-800">Bono 10: Ejercicios Adicionales de Fútbol</p>
-                    <p className="text-[10px] text-slate-400">Formato PDF • 8.4 MB</p>
-                  </div>
-                </div>
-                <a
-                  href="#"
-                  onClick={(e) => e.preventDefault()}
-                  className="bg-emerald-600 hover:bg-emerald-500 text-white p-2 rounded-lg transition-colors flex items-center justify-center"
-                >
-                  <Download className="w-3.5 h-3.5" />
-                </a>
-              </div>
-
-              {/* Download link 12 */}
-              <div className="flex items-center justify-between gap-2 bg-white p-2.5 rounded-lg border border-slate-200">
-                <div className="flex items-center gap-2">
-                  <Star className="w-4 h-4 text-emerald-500" />
-                  <div>
-                    <p className="text-xs font-bold text-slate-800">Bono 11: 80 Ejercicios Físicos para el Portero</p>
-                    <p className="text-[10px] text-slate-400">Formato PDF • 11.5 MB</p>
-                  </div>
-                </div>
-                <a
-                  href="#"
-                  onClick={(e) => e.preventDefault()}
-                  className="bg-emerald-600 hover:bg-emerald-500 text-white p-2 rounded-lg transition-colors flex items-center justify-center"
-                >
-                  <Download className="w-3.5 h-3.5" />
-                </a>
-              </div>
-
-              {/* Download link 13 */}
-              <div className="flex items-center justify-between gap-2 bg-white p-2.5 rounded-lg border border-slate-200">
-                <div className="flex items-center gap-2">
-                  <Star className="w-4 h-4 text-blue-500" />
-                  <div>
-                    <p className="text-xs font-bold text-slate-800">Bono 12: 101 Tareas del Juego de Posición</p>
-                    <p className="text-[10px] text-slate-400">Formato PDF • 15.2 MB</p>
-                  </div>
-                </div>
-                <a
-                  href="#"
-                  onClick={(e) => e.preventDefault()}
-                  className="bg-emerald-600 hover:bg-emerald-500 text-white p-2 rounded-lg transition-colors flex items-center justify-center"
-                >
-                  <Download className="w-3.5 h-3.5" />
-                </a>
-              </div>
-
-              {/* Download link 14 */}
-              <div className="flex items-center justify-between gap-2 bg-white p-2.5 rounded-lg border border-slate-200">
-                <div className="flex items-center gap-2">
-                  <Star className="w-4 h-4 text-purple-500" />
-                  <div>
-                    <p className="text-xs font-bold text-slate-800">Bono 13: 100 Ejercicios de Finalizaciones</p>
-                    <p className="text-[10px] text-slate-400">Formato PDF • 13.8 MB</p>
-                  </div>
-                </div>
-                <a
-                  href="#"
-                  onClick={(e) => e.preventDefault()}
-                  className="bg-emerald-600 hover:bg-emerald-500 text-white p-2 rounded-lg transition-colors flex items-center justify-center"
-                >
-                  <Download className="w-3.5 h-3.5" />
-                </a>
-              </div>
-
-              {/* Download link 15 */}
-              <div className="flex items-center justify-between gap-2 bg-white p-2.5 rounded-lg border border-slate-200">
-                <div className="flex items-center gap-2">
-                  <Star className="w-4 h-4 text-orange-500" />
-                  <div>
-                    <p className="text-xs font-bold text-slate-800">Bono 14: 158 Ejercicios de Pase y Control</p>
-                    <p className="text-[10px] text-slate-400">Formato PDF • 16.1 MB</p>
-                  </div>
-                </div>
-                <a
-                  href="#"
-                  onClick={(e) => e.preventDefault()}
-                  className="bg-emerald-600 hover:bg-emerald-500 text-white p-2 rounded-lg transition-colors flex items-center justify-center"
-                >
-                  <Download className="w-3.5 h-3.5" />
-                </a>
-              </div>
+              ))}
             </div>
 
             <button
