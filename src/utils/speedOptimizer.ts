@@ -46,6 +46,8 @@ export const LOCAL_APP_IMAGES = [
   '/images/bono_1_custom.webp',
   '/images/bono_2_custom.webp',
   '/images/bono_3_custom.webp',
+  '/images/bono_metodologia_barca_custom.png',
+  '/images/bono_metodologia_barca.webp',
   '/images/bono_1.webp',
   '/images/bono_2.webp',
   '/images/bono_3.webp',

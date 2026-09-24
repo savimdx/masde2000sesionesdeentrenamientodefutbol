@@ -303,10 +303,10 @@ export default function App() {
               <Flame className="w-3.5 h-3.5 fill-current" /> SÚPER REGALOS DE ACCESO INMEDIATO
             </div>
             <h2 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight">
-              Recibe hoy estos 9 Bonos Exclusivos (100% Gratis)
+              Recibe hoy estos 10 Bonos Exclusivos (100% Gratis)
             </h2>
             <p className="text-sm text-slate-600 leading-relaxed max-w-2xl mx-auto">
-              Solo tienes que comprar la biblioteca de entrenamientos hoy mismo para recibir de regalo nueve manuales metodológicos y recursos adicionales de gran valor.
+              Solo tienes que comprar la biblioteca de entrenamientos hoy mismo para recibir de regalo diez manuales metodológicos y recursos adicionales de gran valor.
             </p>
           </div>
 
