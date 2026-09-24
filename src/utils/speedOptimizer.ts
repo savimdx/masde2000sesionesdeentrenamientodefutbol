@@ -1,93 +1,57 @@
-import heroFutsalImg from '../assets/images/hero_futsal.webp';
-import packMetodologicoImg from '../assets/images/pack_metodologico.webp';
-import sample1Img from '../assets/images/sample_1.webp';
-import sample2Img from '../assets/images/sample_2.webp';
-import sample3Img from '../assets/images/sample_3.webp';
-import sample4Img from '../assets/images/sample_4.webp';
-import bono1Img from '../assets/images/bono_1.webp';
-import bono2Img from '../assets/images/bono_2.webp';
-import bono3Img from '../assets/images/bono_3.webp';
-import bono4Img from '../assets/images/bono_4.webp';
-import bono5Img from '../assets/images/bono_5.webp';
-import bono6Img from '../assets/images/bono_6.webp';
-import bono7Img from '../assets/images/bono_7.webp';
-import bono8Img from '../assets/images/bono_8.webp';
-import bono9Img from '../assets/images/bono_9.webp';
-import bono10Img from '../assets/images/bono_10.webp';
-import ejerciciosAdicionalesImg from '../assets/images/ejercicios_adicionales_futsal_1783515557260.webp';
-
 // Persistent in-memory cache to prevent re-fetching and ensure instant paint
 const imageMemoryCache = new Map<string, HTMLImageElement>();
 
-export const LOCAL_APP_IMAGES = [
-  heroFutsalImg,
-  packMetodologicoImg,
-  sample1Img,
-  sample2Img,
-  sample3Img,
-  sample4Img,
-  bono1Img,
-  bono2Img,
-  bono3Img,
-  bono4Img,
-  bono5Img,
-  bono6Img,
-  bono7Img,
-  bono8Img,
-  bono9Img,
-  bono10Img,
-  ejerciciosAdicionalesImg,
-  '/images/hero_futsal.webp',
-  '/images/pack_metodologico.webp',
+export const ACTIVE_CATALOG_IMAGES = [
+  '/images/hero_pack.webp',
   '/images/sample_1.webp',
   '/images/sample_2.webp',
   '/images/sample_3.webp',
   '/images/sample_4.webp',
+  '/images/sample_5.webp',
   '/images/bono_1_custom.webp',
   '/images/bono_2_custom.webp',
   '/images/bono_3_custom.webp',
-  '/images/bono_metodologia_barca_custom.png',
-  '/images/bono_metodologia_barca.webp',
-  '/images/bono_1.webp',
+  '/images/bono_metodologia_barca_custom.webp',
   '/images/bono_2.webp',
   '/images/bono_3.webp',
   '/images/bono_4.webp',
   '/images/bono_5.webp',
   '/images/bono_6.webp',
-  '/images/bono_7.webp',
   '/images/bono_8.webp',
-  '/images/bono_9.webp',
-  '/images/bono_10.webp',
-  '/images/ejercicios_adicionales_futsal_1783515557260.webp'
+  '/images/author.webp',
+  '/images/testimonial_1.webp',
+  '/images/testimonial_2.webp',
+  '/images/testimonial_3.webp'
 ];
 
 /**
- * Returns prioritized lists of local WebP application images
+ * Returns prioritized lists of active WebP application images
  */
 export function getAllApplicationImages(): { priorityImages: string[]; secondaryImages: string[] } {
   const priorityImages: string[] = [
-    heroFutsalImg,
-    packMetodologicoImg,
-    sample1Img,
-    sample2Img,
-    sample3Img,
-    sample4Img,
-    '/images/hero_futsal.webp',
-    '/images/pack_metodologico.webp'
+    '/images/hero_pack.webp',
+    '/images/sample_1.webp',
+    '/images/sample_2.webp',
+    '/images/sample_3.webp',
+    '/images/bono_1_custom.webp',
+    '/images/bono_2_custom.webp',
+    '/images/bono_3_custom.webp',
+    '/images/bono_metodologia_barca_custom.webp'
   ];
 
   const secondaryImages: string[] = [
-    bono1Img,
-    bono2Img,
-    bono3Img,
-    bono4Img,
-    bono5Img,
-    bono6Img,
-    bono7Img,
-    bono8Img,
-    bono9Img,
-    bono10Img,
-    ejerciciosAdicionalesImg
+    '/images/sample_4.webp',
+    '/images/sample_5.webp',
+    '/images/bono_2.webp',
+    '/images/bono_3.webp',
+    '/images/bono_4.webp',
+    '/images/bono_5.webp',
+    '/images/bono_6.webp',
+    '/images/bono_8.webp',
+    '/images/author.webp',
+    '/images/testimonial_1.webp',
+    '/images/testimonial_2.webp',
+    '/images/testimonial_3.webp'
   ];
 
   return {
@@ -143,22 +107,22 @@ export function initSpeedOptimizer(): void {
   try {
     const { priorityImages, secondaryImages } = getAllApplicationImages();
 
-    // 1. Immediately preload critical visible assets
-    priorityImages.forEach(src => {
-      preloadImage(src);
-    });
+    // 1. Immediately preload critical visible assets in parallel
+    for (let i = 0; i < priorityImages.length; i++) {
+      preloadImage(priorityImages[i]);
+    }
 
-    // 2. Preload remaining local webp assets during idle browser cycles
+    // 2. Preload remaining local webp assets immediately after
     const loadSecondary = () => {
-      secondaryImages.forEach(src => {
-        preloadImage(src);
-      });
+      for (let i = 0; i < secondaryImages.length; i++) {
+        preloadImage(secondaryImages[i]);
+      }
     };
 
     if ('requestIdleCallback' in window) {
-      (window as any).requestIdleCallback(loadSecondary, { timeout: 1000 });
+      (window as any).requestIdleCallback(loadSecondary, { timeout: 300 });
     } else {
-      setTimeout(loadSecondary, 200);
+      setTimeout(loadSecondary, 50);
     }
   } catch (err) {
     // Fail gracefully

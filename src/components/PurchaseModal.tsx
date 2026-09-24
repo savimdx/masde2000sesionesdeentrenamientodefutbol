@@ -78,7 +78,7 @@ export default function PurchaseModal({ isOpen, onClose }: PurchaseModalProps) {
               <div className="h-[1px] bg-slate-200 my-2" />
               <div className="flex justify-between items-center font-bold">
                 <span className="text-sm text-slate-800">Total a Pagar hoy:</span>
-                <span className="text-lg text-amber-600 font-mono font-black whitespace-nowrap">{formattedPrice}</span>
+                <span className="text-2xl text-orange-600 font-black tracking-tight whitespace-nowrap">{formattedPrice}</span>
               </div>
             </div>
 

@@ -132,7 +132,7 @@ export const BONUSES: BonusItem[] = [
     description: "El prestigioso modelo formativo y ADN de La Masia: tareas de posición, juego entre líneas, control orientado, rondos avanzados y desarrollo integral de la toma de decisiones.",
     originalPrice: 45,
     tag: "MODELO LA MASIA & ADN",
-    image: "/images/bono_metodologia_barca_custom.png",
+    image: "/images/bono_metodologia_barca_custom.webp",
     fallbackImage: "https://i.ibb.co/xtBrTYxn/Chat-GPT-Image-24-de-set-de-2026-11-31-59.png"
   },
   {

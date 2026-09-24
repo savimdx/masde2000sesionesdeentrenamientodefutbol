@@ -112,10 +112,13 @@
     <!-- Parallel load Google Fonts to eliminate CSS @import blocking - optimized weights -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
 
-    <!-- Preload critical Hero and Offer images for instant zero-delay first paint -->
+    <!-- Preload critical Hero and Top Bonos images for instant zero-delay first paint -->
     <link rel="preload" as="image" href="/images/hero_pack.webp" type="image/webp" fetchpriority="high" />
     <link rel="preload" as="image" href="/images/sample_1.webp" type="image/webp" />
-    <link rel="preload" as="image" href="/images/bono_1.webp" type="image/webp" />
+    <link rel="preload" as="image" href="/images/bono_1_custom.webp" type="image/webp" />
+    <link rel="preload" as="image" href="/images/bono_2_custom.webp" type="image/webp" />
+    <link rel="preload" as="image" href="/images/bono_3_custom.webp" type="image/webp" />
+    <link rel="preload" as="image" href="/images/bono_metodologia_barca_custom.webp" type="image/webp" />
 
     <!-- Fast parallel image preloader to eliminate load delays across all sections -->
     <script>
@@ -130,25 +133,29 @@
           "/images/bono_1_custom.webp",
           "/images/bono_2_custom.webp",
           "/images/bono_3_custom.webp",
-          "/images/bono_1.webp",
+          "/images/bono_metodologia_barca_custom.webp",
           "/images/bono_2.webp",
           "/images/bono_3.webp",
           "/images/bono_4.webp",
           "/images/bono_5.webp",
           "/images/bono_6.webp",
-          "/images/bono_7.webp",
           "/images/bono_8.webp",
           "/images/testimonial_1.webp",
           "/images/testimonial_2.webp",
           "/images/testimonial_3.webp",
           "/images/author.webp"
         ];
-        // Instantly prefetch all images into browser cache with high concurrency
+        // Instantly prefetch and hardware-decode all images into browser cache with zero lag
         for (var i = 0; i < catalogImages.length; i++) {
-          var img = new Image();
-          img.decoding = "async";
-          img.referrerPolicy = "no-referrer";
-          img.src = catalogImages[i];
+          (function(src) {
+            var img = new Image();
+            img.decoding = "async";
+            img.referrerPolicy = "no-referrer";
+            img.src = src;
+            if (img.decode) {
+              img.decode().catch(function() {});
+            }
+          })(catalogImages[i]);
         }
       })();
     </script>
