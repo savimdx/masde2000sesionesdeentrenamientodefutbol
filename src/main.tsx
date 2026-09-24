@@ -47,6 +47,22 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
 }
 
 try {
+  // Clear any legacy ServiceWorkers or CacheStorage previously registered on this domain
+  if (typeof window !== 'undefined') {
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then((registrations) => {
+        for (const registration of registrations) {
+          registration.unregister();
+        }
+      }).catch(() => {});
+    }
+    // Listen for Vite chunk hash updates when a new deploy happens
+    window.addEventListener('vite:preloadError', () => {
+      console.warn('App updated on server. Reloading to display latest modifications...');
+      window.location.reload();
+    });
+  }
+
   // Initialize image prefetch and persistent cache engine
   initSpeedOptimizer();
 } catch (e) {
