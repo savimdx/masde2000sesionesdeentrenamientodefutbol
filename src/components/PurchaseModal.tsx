@@ -12,20 +12,23 @@ export default function PurchaseModal({ isOpen, onClose }: PurchaseModalProps) {
   const [formData, setFormData] = useState({ name: '', email: '', cardNum: '', cardDate: '', cardCvc: '' });
   const [paymentMethod, setPaymentMethod] = useState<'card' | 'paypal'>('card');
   const [status, setStatus] = useState<'idle' | 'processing' | 'success'>('idle');
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   if (!isOpen) return null;
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+    if (errorMessage) setErrorMessage(null);
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.email) {
-      alert('Por favor completa los campos de nombre y correo electrónico.');
+      setErrorMessage('Por favor completa los campos de nombre y correo electrónico.');
       return;
     }
     
+    setErrorMessage(null);
     setStatus('processing');
     
     setTimeout(() => {
@@ -77,6 +80,12 @@ export default function PurchaseModal({ isOpen, onClose }: PurchaseModalProps) {
                 <span className="text-lg text-amber-600 font-mono font-black whitespace-nowrap">{formattedPrice}</span>
               </div>
             </div>
+
+            {errorMessage && (
+              <div className="bg-rose-50 border border-rose-200 text-rose-700 text-xs font-semibold px-4 py-3 rounded-xl mb-4">
+                {errorMessage}
+              </div>
+            )}
 
             <div className="space-y-4">
               {/* Full Name */}
