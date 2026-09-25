@@ -8,10 +8,7 @@ export const ACTIVE_CATALOG_IMAGES = [
   '/images/sample_3.webp',
   '/images/sample_4.webp',
   '/images/sample_5.webp',
-  '/images/bono_1_custom.webp',
-  '/images/bono_2_custom.webp',
   '/images/bono_3_custom.webp',
-  '/images/bono_metodologia_barca_custom.webp',
   '/images/bono_2.webp',
   '/images/bono_3.webp',
   '/images/bono_4.webp',
@@ -33,10 +30,7 @@ export function getAllApplicationImages(): { priorityImages: string[]; secondary
     '/images/sample_1.webp',
     '/images/sample_2.webp',
     '/images/sample_3.webp',
-    '/images/bono_1_custom.webp',
-    '/images/bono_2_custom.webp',
-    '/images/bono_3_custom.webp',
-    '/images/bono_metodologia_barca_custom.webp'
+    '/images/bono_3_custom.webp'
   ];
 
   const secondaryImages: string[] = [

@@ -96,28 +96,8 @@ export const BENEFITS: BenefitItem[] = [
 
 export const BONUSES: BonusItem[] = [
   {
-    id: "bon-messi",
-    number: 1,
-    title: "El Método Messi",
-    description: "Análisis técnico y ejercicios prácticos inspirados en el juego de Lionel Messi: regate corto en espacios reducidos, cambios de ritmo explosivos, visión periférica y definición de alta efectividad.",
-    originalPrice: 39,
-    tag: "METODOLOGÍA & TALENTO",
-    image: "/images/bono_1_custom.webp",
-    fallbackImage: "https://i.ibb.co/FkcVg9Wn/Gemini-Generated-Image-gow5nfgow5nfgow5.jpg"
-  },
-  {
-    id: "bon-guardiola",
-    number: 2,
-    title: "Ejercicios y Mandamientos de Pep Guardiola",
-    description: "Los principios tácticos fundamentales y tareas de campo del modelo Guardiola: salida limpia de balón bajo presión, superioridad numérica, rondos tácticos avanzados y la regla de los 6 segundos tras pérdida.",
-    originalPrice: 45,
-    tag: "JUEGO DE POSICIÓN & TÁCTICA",
-    image: "/images/bono_2_custom.webp",
-    fallbackImage: "https://i.ibb.co/9m3gvqL8/Chat-GPT-Image-24-de-set-de-2026-10-33-16.png"
-  },
-  {
     id: "bon-tacticos-base",
-    number: 3,
+    number: 1,
     title: "500 Ejercicios Tácticos para Fútbol Base",
     description: "El mayor compendio de tareas tácticas adaptadas para fútbol formativo: ocupación inteligente del espacio, repliegue ordenado, presión en bloque y ejercicios dinámicos por categorías.",
     originalPrice: 39,
@@ -126,18 +106,8 @@ export const BONUSES: BonusItem[] = [
     fallbackImage: "https://i.ibb.co/G3d3hK5x/Chat-GPT-Image-24-de-set-de-2026-10-26-12.png"
   },
   {
-    id: "bon-metodologia-barca",
-    number: 4,
-    title: "Metodología del Fútbol Base del Barcelona",
-    description: "El prestigioso modelo formativo y ADN de La Masia: tareas de posición, juego entre líneas, control orientado, rondos avanzados y desarrollo integral de la toma de decisiones.",
-    originalPrice: 45,
-    tag: "MODELO LA MASIA & ADN",
-    image: "/images/bono_metodologia_barca_custom.webp",
-    fallbackImage: "https://i.ibb.co/yFLsncb8/Chat-GPT-Image-24-de-set-de-2026-11-31-59.png"
-  },
-  {
     id: "bon-2",
-    number: 5,
+    number: 2,
     title: "100 Ejercicios con Balón para Desarrollar la Resistencia en Fútbol",
     description: "Métodos de preparación física integrada con balón para acelerar la ganancia de resistencia específica de juego y mantener alta la motivación.",
     originalPrice: 35,
@@ -147,7 +117,7 @@ export const BONUSES: BonusItem[] = [
   },
   {
     id: "bon-4",
-    number: 6,
+    number: 3,
     title: "60 Ejercicios Físicos con Sólo un Pequeño Equipamiento en Fútbol",
     description: "Rutinas dinámicas optimizadas para entrenar fuerza, potencia y estabilidad utilizando materiales mínimos y portátiles.",
     originalPrice: 24,
@@ -157,7 +127,7 @@ export const BONUSES: BonusItem[] = [
   },
   {
     id: "bon-8",
-    number: 7,
+    number: 4,
     title: "24 Plantillas de Entrenamientos de Fútbol",
     description: "Plantillas de diagramación, planillas de control de asistencia, fichas tácticas y hojas de anotación para estructurar tus entrenamientos de forma profesional.",
     originalPrice: 25,
@@ -167,7 +137,7 @@ export const BONUSES: BonusItem[] = [
   },
   {
     id: "bon-9",
-    number: 8,
+    number: 5,
     title: "Lecciones en Video de Fútbol",
     description: "Acceso exclusivo a nuestra videoteca con clases tácticas y metodológicas en video, paso a paso, todo muy practical e intuitivo.",
     originalPrice: 49,
@@ -177,7 +147,7 @@ export const BONUSES: BonusItem[] = [
   },
   {
     id: "bon-10",
-    number: 9,
+    number: 6,
     title: "Manual Práctico de Preparación Física en el Fútbol",
     description: "Guía completa de planificación física para optimizar la resistencia, fuerza explosiva, velocidad y prevención de lesiones en todas las etapas competitivas.",
     originalPrice: 35,
@@ -187,7 +157,7 @@ export const BONUSES: BonusItem[] = [
   },
   {
     id: "bon-18",
-    number: 10,
+    number: 7,
     title: "Ejercicios Adicionales de Fútbol Sala",
     description: "Una recopilación exclusiva con esquemas tácticos extras, variantes avanzadas de posesión, presión alta y jugadas a balón parado específicas para fútbol sala.",
     originalPrice: 19,
